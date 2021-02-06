@@ -9,6 +9,19 @@ class HomePage extends StatelessWidget {
         leading: Icon(
           FlutterIcons.menu_fea,
         ),
+        centerTitle: true,
+        title: Text("My Money"),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 16.0),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                FlutterIcons.bell_fea,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Container(),
     );
