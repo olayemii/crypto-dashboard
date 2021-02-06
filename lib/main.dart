@@ -1,4 +1,5 @@
 import 'package:crypto_dashboard/pages/homepage.dart';
+import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil_init.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,9 +18,15 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Flutter Coffee UI",
-          theme: ThemeData(
+          themeMode: ThemeMode.dark,
+          darkTheme: ThemeData(
             visualDensity: VisualDensity.adaptivePlatformDensity,
             textTheme: GoogleFonts.poppinsTextTheme(),
+            scaffoldBackgroundColor: kPrimaryColor,
+            appBarTheme: AppBarTheme(
+              elevation: 0.0,
+              color: kPrimaryColor,
+            ),
           ),
           initialRoute: "/",
           onGenerateRoute: _onGenerateRoute,
