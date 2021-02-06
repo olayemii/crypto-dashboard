@@ -1,6 +1,7 @@
-import 'package:crypto_dashboard/pages/homepage.dart';
+import 'package:crypto_dashboard/pages/home/homepage.dart';
 import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screen_util.dart';
 import 'package:flutter_screenutil/screenutil_init.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,7 +22,12 @@ class MyApp extends StatelessWidget {
           themeMode: ThemeMode.dark,
           darkTheme: ThemeData(
             visualDensity: VisualDensity.adaptivePlatformDensity,
-            textTheme: GoogleFonts.poppinsTextTheme(),
+            textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+              caption: TextStyle(
+                color: kCaptionColor,
+                fontSize: 16.0,
+              ),
+            ),
             scaffoldBackgroundColor: kPrimaryColor,
             appBarTheme: AppBarTheme(
               elevation: 0.0,
