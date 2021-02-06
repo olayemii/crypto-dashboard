@@ -56,6 +56,9 @@ class HomePage extends StatelessWidget {
                   color: Color.fromRGBO(97, 99, 119, 1),
                 ),
               ),
+              SizedBox(
+                height: 15.0,
+              ),
               UserBalance(),
             ],
           ),
