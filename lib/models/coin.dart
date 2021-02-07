@@ -1,3 +1,5 @@
+import 'package:crypto_dashboard/utils/string_extension.dart';
+
 enum CoinType {
   BITCOIN,
   ETHEREUM,
@@ -6,12 +8,15 @@ enum CoinType {
   TRON,
 }
 
+enum Trend { UP, DOWN }
+
 class Coin {
   final CoinType type;
   final double currentPrice;
   final double percentProgress;
   final double amountProgress;
   final double balance;
+  final Trend trend;
 
   Coin({
     this.currentPrice,
@@ -19,6 +24,7 @@ class Coin {
     this.amountProgress,
     this.balance,
     this.type,
+    this.trend,
   });
 
   String getCoinAbbr() {
@@ -51,5 +57,11 @@ class Coin {
     } else {
       return "assets/images/bitcoin.png";
     }
+  }
+
+  @override
+  String toString() {
+    String firstPart = this.type.toString().split(".")[1];
+    return firstPart.capitalize();
   }
 }

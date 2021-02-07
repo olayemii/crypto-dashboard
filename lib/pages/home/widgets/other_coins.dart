@@ -2,7 +2,7 @@ import 'package:crypto_dashboard/pages/home/widgets/coin_card.dart';
 import 'package:crypto_dashboard/utils/static_data.dart';
 import 'package:flutter/material.dart';
 
-class UserBalance extends StatelessWidget {
+class OtherCoins extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);
@@ -15,15 +15,11 @@ class UserBalance extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Your Coins",
+                "Other Coins",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
                 ),
-              ),
-              Text(
-                "Total amount \$378.15",
-                style: themeData.textTheme.caption,
               ),
             ],
           ),
@@ -33,7 +29,7 @@ class UserBalance extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {
               return CoinCard(
-                coin: StaticData.userCoins[index],
+                coin: StaticData.otherCoins[index],
               );
             },
             separatorBuilder: (BuildContext context, int index) {
@@ -41,7 +37,7 @@ class UserBalance extends StatelessWidget {
                 height: 15.0,
               );
             },
-            itemCount: StaticData.userCoins.length,
+            itemCount: StaticData.otherCoins.length,
           )
         ],
       ),

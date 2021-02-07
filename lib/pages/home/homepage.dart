@@ -1,4 +1,5 @@
 import 'package:crypto_dashboard/pages/home/widgets/account_balance.dart';
+import 'package:crypto_dashboard/pages/home/widgets/other_coins.dart';
 import 'package:crypto_dashboard/pages/home/widgets/user_balance.dart';
 import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -60,6 +61,7 @@ class HomePage extends StatelessWidget {
                 height: 15.0,
               ),
               UserBalance(),
+              OtherCoins(),
             ],
           ),
         ),
