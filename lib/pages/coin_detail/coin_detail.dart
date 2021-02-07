@@ -54,6 +54,9 @@ class CoinDetail extends StatelessWidget {
               ),
               CoinStats(),
               Flexible(child: SizedBox()),
+              SizedBox(
+                height: 10.0,
+              ),
               SingleCoinBalance()
             ],
           ),
