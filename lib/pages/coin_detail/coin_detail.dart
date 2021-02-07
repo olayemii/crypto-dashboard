@@ -1,3 +1,4 @@
+import 'package:crypto_dashboard/pages/coin_detail/widgets/coin_chart.dart';
 import 'package:crypto_dashboard/pages/coin_detail/widgets/coin_stats.dart';
 import 'package:crypto_dashboard/pages/coin_detail/widgets/single_coin_balance.dart';
 import 'package:crypto_dashboard/pages/home/widgets/account_balance.dart';
@@ -53,21 +54,49 @@ class CoinDetail extends StatelessWidget {
                 height: 25.0,
               ),
               CoinStats(),
-              Flexible(child: SizedBox()),
+              SizedBox(
+                height: 10.0,
+              ),
+              CoinChart(),
               SizedBox(
                 height: 10.0,
               ),
               SingleCoinBalance(),
               SizedBox(
-                height: 10.0,
+                height: 15.0,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "BUY",
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "BUY",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 22.0,
+                            color: Color.fromRGBO(97, 201, 200, 1),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "SELL",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 22.0,
+                            color: Color.fromRGBO(247, 71, 104, 1),
+                          ),
+                        ),
+                      ),
                     )
                   ],
                 ),
