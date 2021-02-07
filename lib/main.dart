@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
               color: kPrimaryColor,
             ),
           ),
-          initialRoute: "/coin-detail",
+          initialRoute: "/",
           onGenerateRoute: _onGenerateRoute,
         );
       },
