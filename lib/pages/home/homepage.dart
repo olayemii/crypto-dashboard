@@ -1,4 +1,5 @@
 import 'package:crypto_dashboard/pages/home/widgets/account_balance.dart';
+import 'package:crypto_dashboard/pages/home/widgets/notification_bell.dart';
 import 'package:crypto_dashboard/pages/home/widgets/other_coins.dart';
 import 'package:crypto_dashboard/pages/home/widgets/user_balance.dart';
 import 'package:crypto_dashboard/utils/constants.dart';
@@ -16,28 +17,7 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: Text("My Money"),
         actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 16.0),
-            child: GestureDetector(
-              onTap: () {},
-              child: Stack(
-                alignment: Alignment.topRight,
-                children: [
-                  Icon(
-                    FlutterIcons.bell_fea,
-                  ),
-                  Container(
-                    width: 8.0,
-                    height: 8.0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: kDangerColor,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          NotificationBell(),
         ],
       ),
       body: Container(

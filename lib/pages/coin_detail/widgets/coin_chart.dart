@@ -4,7 +4,13 @@ import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_candlesticks/flutter_candlesticks.dart';
 
-class CoinChart extends StatelessWidget {
+class CoinChart extends StatefulWidget {
+  @override
+  _CoinChartState createState() => _CoinChartState();
+}
+
+class _CoinChartState extends State<CoinChart> {
+  int activeIndex = 0;
   final List sampleData = List.generate(
     25,
     (index) {
@@ -21,7 +27,9 @@ class CoinChart extends StatelessWidget {
       };
     },
   ).toList();
+
   final List<String> chartTimes = ["Today", "1W", "1M", "3M", "6M", "1Y"];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,18 +40,25 @@ class CoinChart extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: chartTimes.map((e) {
               int currentIndex = chartTimes.indexOf(e);
-              return Container(
-                color: currentIndex == 1
-                    ? Color.fromRGBO(55, 66, 92, 1)
-                    : Colors.transparent,
-                padding: EdgeInsets.symmetric(
-                  vertical: 5.0,
-                  horizontal: 10.0,
-                ),
-                child: Text(
-                  e,
-                  style: TextStyle(
-                    color: Colors.white,
+              return InkWell(
+                onTap: () {
+                  setState(() {
+                    activeIndex = currentIndex;
+                  });
+                },
+                child: Container(
+                  color: currentIndex == activeIndex
+                      ? Color.fromRGBO(55, 66, 92, 1)
+                      : Colors.transparent,
+                  padding: EdgeInsets.symmetric(
+                    vertical: 5.0,
+                    horizontal: 10.0,
+                  ),
+                  child: Text(
+                    e,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               );
@@ -59,7 +74,7 @@ class CoinChart extends StatelessWidget {
             data: sampleData,
             enableGridLines: true,
             volumeProp: (1 / sampleData.length),
-            decreaseColor: Color.fromRGBO(247, 71, 104, 1),
+            decreaseColor: kDangerColor,
             increaseColor: kSuccessColor,
           ),
         ),
