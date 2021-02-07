@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class OtherCoins extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ThemeData themeData = Theme.of(context);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
