@@ -34,27 +34,9 @@ class MyApp extends StatelessWidget {
               color: kPrimaryColor,
             ),
           ),
-          initialRoute: "/",
-          onGenerateRoute: _onGenerateRoute,
+          home: HomePage(),
         );
       },
     );
-  }
-}
-
-Route<dynamic> _onGenerateRoute(RouteSettings settings) {
-  switch (settings.name) {
-    case "/":
-      return MaterialPageRoute(builder: (BuildContext context) {
-        return HomePage();
-      });
-    case "/coin-detail":
-      return MaterialPageRoute(builder: (BuildContext context) {
-        return CoinDetail();
-      });
-    default:
-      return MaterialPageRoute(builder: (BuildContext context) {
-        return HomePage();
-      });
   }
 }

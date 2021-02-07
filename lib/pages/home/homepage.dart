@@ -2,7 +2,6 @@ import 'package:crypto_dashboard/pages/home/widgets/account_balance.dart';
 import 'package:crypto_dashboard/pages/home/widgets/notification_bell.dart';
 import 'package:crypto_dashboard/pages/home/widgets/other_coins.dart';
 import 'package:crypto_dashboard/pages/home/widgets/user_balance.dart';
-import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 

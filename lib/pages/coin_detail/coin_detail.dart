@@ -1,3 +1,4 @@
+import 'package:crypto_dashboard/models/coin.dart';
 import 'package:crypto_dashboard/pages/coin_detail/widgets/coin_chart.dart';
 import 'package:crypto_dashboard/pages/coin_detail/widgets/coin_stats.dart';
 import 'package:crypto_dashboard/pages/coin_detail/widgets/single_coin_balance.dart';
@@ -7,17 +8,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class CoinDetail extends StatelessWidget {
+  final Coin coin;
+  CoinDetail({this.coin});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: Icon(
             FlutterIcons.keyboard_backspace_mdi,
           ),
         ),
         centerTitle: true,
-        title: Text("Bitcoin (BTC)"),
+        title: Text("${coin.toString()} (${coin.getCoinAbbr()})"),
         actions: [
           NotificationBell(),
         ],

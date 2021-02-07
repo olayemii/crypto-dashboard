@@ -1,4 +1,5 @@
 import 'package:crypto_dashboard/models/coin.dart';
+import 'package:crypto_dashboard/pages/coin_detail/coin_detail.dart';
 import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:crypto_dashboard/utils/adaptive_height_extension.dart';
@@ -14,80 +15,93 @@ class CoinCard extends StatelessWidget {
     return Slidable(
       actionPane: SlidableDrawerActionPane(),
       actionExtentRatio: 0.25,
-      child: Container(
-        height: 90.0.h,
-        color: Color.fromRGBO(55, 66, 92, 0.4),
-        padding: EdgeInsets.symmetric(
-          horizontal: 16.0,
-        ),
-        child: Row(
-          children: [
-            Container(
-              width: 40.0.w,
-              child: Image.asset(
-                coin.getImagePath(),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) {
+                return CoinDetail(coin: this.coin);
+              },
+            ),
+          );
+        },
+        child: Container(
+          height: 90.0.h,
+          color: Color.fromRGBO(55, 66, 92, 0.4),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.0,
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 40.0.w,
+                child: Image.asset(
+                  coin.getImagePath(),
+                ),
               ),
-            ),
-            SizedBox(
-              width: 20.0,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "${coin.toString()} (${coin.getCoinAbbr()})",
-                  style: TextStyle(
-                    color: Colors.white,
+              SizedBox(
+                width: 20.0,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "${coin.toString()} (${coin.getCoinAbbr()})",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                Text(
-                  "${coin.balance}",
-                  style: themeData.textTheme.caption.copyWith(fontSize: 14.0),
-                ),
-              ],
-            ),
-            Spacer(),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  "\$${coin.currentPrice}",
-                  style: TextStyle(
-                    color: Colors.white,
+                  SizedBox(
+                    height: 5.0,
                   ),
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      getCoinProgress(coin),
-                      style: TextStyle(
+                  Text(
+                    "${coin.balance}",
+                    style: themeData.textTheme.caption.copyWith(fontSize: 14.0),
+                  ),
+                ],
+              ),
+              Spacer(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    "\$${coin.currentPrice}",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        getCoinProgress(coin),
+                        style: TextStyle(
+                          color: coin.trend == Trend.UP
+                              ? kSuccessColor
+                              : kDangerColor,
+                          fontSize: 13.0,
+                        ),
+                      ),
+                      Icon(
+                        coin.trend == Trend.UP
+                            ? FlutterIcons.caret_up_faw
+                            : FlutterIcons.caret_down_faw,
+                        size: 14.0,
                         color: coin.trend == Trend.UP
                             ? kSuccessColor
                             : kDangerColor,
-                        fontSize: 13.0,
-                      ),
-                    ),
-                    Icon(
-                      coin.trend == Trend.UP
-                          ? FlutterIcons.caret_up_faw
-                          : FlutterIcons.caret_down_faw,
-                      size: 14.0,
-                      color:
-                          coin.trend == Trend.UP ? kSuccessColor : kDangerColor,
-                    )
-                  ],
-                ),
-              ],
-            )
-          ],
+                      )
+                    ],
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
       actions: <Widget>[
