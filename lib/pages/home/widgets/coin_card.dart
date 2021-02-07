@@ -41,6 +41,50 @@ class CoinCard extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Text(
+                  "${coin.balance}",
+                  style: themeData.textTheme.caption.copyWith(fontSize: 14.0),
+                ),
+              ],
+            ),
+            Spacer(),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  "\$${coin.currentPrice}",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      getCoinProgress(coin),
+                      style: TextStyle(
+                        color: coin.trend == Trend.UP
+                            ? kSuccessColor
+                            : kDangerColor,
+                        fontSize: 13.0,
+                      ),
+                    ),
+                    Icon(
+                      coin.trend == Trend.UP
+                          ? FlutterIcons.caret_up_faw
+                          : FlutterIcons.caret_down_faw,
+                      size: 14.0,
+                      color:
+                          coin.trend == Trend.UP ? kSuccessColor : kDangerColor,
+                    )
+                  ],
+                ),
               ],
             )
           ],
