@@ -55,11 +55,11 @@ class CoinDetail extends StatelessWidget {
               ),
               CoinStats(),
               SizedBox(
-                height: 10.0,
+                height: 50.0,
               ),
               CoinChart(),
               SizedBox(
-                height: 10.0,
+                height: 30.0,
               ),
               SingleCoinBalance(),
               SizedBox(
@@ -77,7 +77,7 @@ class CoinDetail extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 22.0,
-                            color: Color.fromRGBO(97, 201, 200, 1),
+                            color: kSuccessColor,
                           ),
                         ),
                       ),

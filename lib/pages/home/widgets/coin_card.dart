@@ -77,7 +77,7 @@ class CoinCard extends StatelessWidget {
                                       getCoinProgress(coin),
                                       style: TextStyle(
                                         color: coin.trend == Trend.UP
-                                            ? Color.fromRGBO(97, 201, 200, 1)
+                                            ? kSuccessColor
                                             : Color.fromRGBO(247, 71, 104, 1),
                                         fontSize: 13.0,
                                       ),
@@ -88,7 +88,7 @@ class CoinCard extends StatelessWidget {
                                           : FlutterIcons.caret_down_faw,
                                       size: 14.0,
                                       color: coin.trend == Trend.UP
-                                          ? Color.fromRGBO(97, 201, 200, 1)
+                                          ? kSuccessColor
                                           : Color.fromRGBO(247, 71, 104, 1),
                                     )
                                   ],
@@ -116,7 +116,7 @@ class CoinCard extends StatelessWidget {
       ],
       secondaryActions: <Widget>[
         IconSlideAction(
-          color: Color.fromRGBO(97, 201, 200, 1),
+          color: kSuccessColor,
           icon: FlutterIcons.plus_fea,
           foregroundColor: Colors.white,
           onTap: () => null,

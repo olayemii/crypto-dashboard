@@ -1,3 +1,4 @@
+import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -58,13 +59,13 @@ class AccountBalance extends StatelessWidget {
               Text(
                 "+2.14%",
                 style: TextStyle(
-                  color: Color.fromRGBO(97, 201, 200, 1),
+                  color: kSuccessColor,
                   fontSize: 16.0,
                 ),
               ),
               Icon(
                 FlutterIcons.caret_up_faw,
-                color: Color.fromRGBO(97, 201, 200, 1),
+                color: kSuccessColor,
               )
             ],
           )

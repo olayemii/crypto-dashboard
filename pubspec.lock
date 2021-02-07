@@ -97,6 +97,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.4"
+  flutter_candlesticks_chart:
+    dependency: "direct main"
+    description:
+      name: flutter_candlesticks_chart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   flutter_icons:
     dependency: "direct main"
     description:

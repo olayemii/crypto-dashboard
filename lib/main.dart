@@ -2,7 +2,6 @@ import 'package:crypto_dashboard/pages/coin_detail/coin_detail.dart';
 import 'package:crypto_dashboard/pages/home/homepage.dart';
 import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/screen_util.dart';
 import 'package:flutter_screenutil/screenutil_init.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
               color: kPrimaryColor,
             ),
           ),
-          initialRoute: "/coin-detail",
+          initialRoute: "/",
           onGenerateRoute: _onGenerateRoute,
         );
       },

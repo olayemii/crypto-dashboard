@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
   flutter_candlesticks: ^0.1.4
+  flutter_candlesticks_chart: ^0.1.1
   flutter_icons: ^1.1.0
   flutter_screenutil: ^4.0.2+3
   flutter_slidable: ^0.5.7

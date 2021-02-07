@@ -1,43 +1,69 @@
+import 'dart:math';
+
+import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_candlesticks/flutter_candlesticks.dart';
 
 class CoinChart extends StatelessWidget {
-  final List sampleData = [
-    {"open": 50.0, "high": 100.0, "low": 40.0, "close": 80, "volumeto": 5000.0},
-    {"open": 80.0, "high": 90.0, "low": 55.0, "close": 65, "volumeto": 4000.0},
-    {"open": 65.0, "high": 120.0, "low": 60.0, "close": 90, "volumeto": 7000.0},
-    {"open": 90.0, "high": 95.0, "low": 85.0, "close": 80, "volumeto": 2000.0},
-    {"open": 80.0, "high": 85.0, "low": 40.0, "close": 50, "volumeto": 3000.0},
-    {"open": 50.0, "high": 100.0, "low": 40.0, "close": 80, "volumeto": 5000.0},
-    {"open": 80.0, "high": 90.0, "low": 55.0, "close": 65, "volumeto": 4000.0},
-    {"open": 65.0, "high": 120.0, "low": 60.0, "close": 90, "volumeto": 7000.0},
-    {"open": 90.0, "high": 95.0, "low": 85.0, "close": 80, "volumeto": 2000.0},
-    {"open": 80.0, "high": 85.0, "low": 40.0, "close": 50, "volumeto": 3000.0},
-    {"open": 50.0, "high": 100.0, "low": 40.0, "close": 80, "volumeto": 5000.0},
-    {"open": 80.0, "high": 90.0, "low": 55.0, "close": 65, "volumeto": 4000.0},
-    {"open": 65.0, "high": 120.0, "low": 60.0, "close": 90, "volumeto": 7000.0},
-    {"open": 90.0, "high": 95.0, "low": 85.0, "close": 80, "volumeto": 2000.0},
-    {"open": 80.0, "high": 85.0, "low": 40.0, "close": 50, "volumeto": 3000.0},
-    {"open": 50.0, "high": 100.0, "low": 40.0, "close": 80, "volumeto": 5000.0},
-    {"open": 80.0, "high": 90.0, "low": 55.0, "close": 65, "volumeto": 4000.0},
-    {"open": 65.0, "high": 120.0, "low": 60.0, "close": 90, "volumeto": 7000.0},
-    {"open": 90.0, "high": 95.0, "low": 85.0, "close": 80, "volumeto": 2000.0},
-    {"open": 80.0, "high": 85.0, "low": 40.0, "close": 50, "volumeto": 3000.0},
-  ];
+  final List sampleData = List.generate(
+    25,
+    (index) {
+      double open = Random().nextDouble() * 100.0;
+      double low = Random().nextDouble() * 50.0;
+      double close = Random().nextDouble() * 150.0;
+      double volume = Random().nextDouble() * 5000.0;
+      return {
+        "open": open,
+        "high": open * 2,
+        "low": low,
+        "close": close,
+        "volumeto": volume,
+      };
+    },
+  ).toList();
+  final List<String> chartTimes = ["Today", "1W", "1M", "3M", "6M", "1Y"];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(
-        vertical: 20.0,
-      ),
-      height: 200.0,
-      child: OHLCVGraph(
-        data: sampleData,
-        enableGridLines: true,
-        volumeProp: (1 / 20.0),
-        decreaseColor: Color.fromRGBO(247, 71, 104, 1),
-        increaseColor: Color.fromRGBO(97, 201, 200, 1),
-      ),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: chartTimes.map((e) {
+              int currentIndex = chartTimes.indexOf(e);
+              return Container(
+                color: currentIndex == 1
+                    ? Color.fromRGBO(55, 66, 92, 1)
+                    : Colors.transparent,
+                padding: EdgeInsets.symmetric(
+                  vertical: 5.0,
+                  horizontal: 10.0,
+                ),
+                child: Text(
+                  e,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.symmetric(
+            vertical: 20.0,
+          ),
+          height: 200.0,
+          child: OHLCVGraph(
+            data: sampleData,
+            enableGridLines: true,
+            volumeProp: (1 / sampleData.length),
+            decreaseColor: Color.fromRGBO(247, 71, 104, 1),
+            increaseColor: kSuccessColor,
+          ),
+        ),
+      ],
     );
   }
 }
