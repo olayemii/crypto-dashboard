@@ -32,8 +32,16 @@ class CoinCard extends StatelessWidget {
               width: 20.0,
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [],
+              children: [
+                Text(
+                  "${coin.toString()} (${coin.getCoinAbbr()})",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             )
           ],
         ),
