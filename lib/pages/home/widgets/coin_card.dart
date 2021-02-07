@@ -110,13 +110,15 @@ class CoinCard extends StatelessWidget {
         IconSlideAction(
           color: kDangerColor,
           icon: FlutterIcons.x_fea,
+          foregroundColor: Colors.white,
           onTap: () => null,
         ),
       ],
       secondaryActions: <Widget>[
         IconSlideAction(
-          color: kDangerColor,
-          icon: FlutterIcons.x_fea,
+          color: Color.fromRGBO(97, 201, 200, 1),
+          icon: FlutterIcons.plus_fea,
+          foregroundColor: Colors.white,
           onTap: () => null,
         ),
       ],
