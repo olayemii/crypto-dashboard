@@ -31,6 +31,10 @@ class CoinCard extends StatelessWidget {
             SizedBox(
               width: 20.0,
             ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [],
+            )
           ],
         ),
       ),
