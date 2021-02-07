@@ -1,3 +1,4 @@
+import 'package:crypto_dashboard/pages/coin_detail/coin_detail.dart';
 import 'package:crypto_dashboard/pages/home/homepage.dart';
 import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
               color: kPrimaryColor,
             ),
           ),
-          initialRoute: "/",
+          initialRoute: "/coin-detail",
           onGenerateRoute: _onGenerateRoute,
         );
       },
@@ -47,6 +48,10 @@ Route<dynamic> _onGenerateRoute(RouteSettings settings) {
     case "/":
       return MaterialPageRoute(builder: (BuildContext context) {
         return HomePage();
+      });
+    case "/coin-detail":
+      return MaterialPageRoute(builder: (BuildContext context) {
+        return CoinDetail();
       });
     default:
       return MaterialPageRoute(builder: (BuildContext context) {
