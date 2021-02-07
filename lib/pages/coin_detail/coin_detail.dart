@@ -57,7 +57,21 @@ class CoinDetail extends StatelessWidget {
               SizedBox(
                 height: 10.0,
               ),
-              SingleCoinBalance()
+              SingleCoinBalance(),
+              SizedBox(
+                height: 10.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "BUY",
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
