@@ -2,7 +2,7 @@
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/olayemii/flutter-ui-kits?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/olayemii/flutter-ui-kits?style=social) ![GitHub followers](https://img.shields.io/github/followers/olayemii?style=social) ![GitHub](https://img.shields.io/github/license/olayemii/flutter-ui-kits)
 
-Free Flutter UI Kits based on designs on UpLabs 💓. <a href="https://www.youtube.com/watch?v=iDgFwzmO1SU">Watch Youtube Speed code Tutorial Here</a>
+Free Flutter UI Kits based on designs on UpLabs 💓. <a href="https://youtu.be/tt2MT_yUzME">Watch Youtube Speed code Tutorial Here</a>
 
 
 
