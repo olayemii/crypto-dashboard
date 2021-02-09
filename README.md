@@ -40,6 +40,6 @@ Our top sponsors will be listed here
 
 ### Screenshots
 
-![Screenshot 1](https://res.cloudinary.com/olayemii/image/upload/v1612831194/assets/crypto-001_uq1uc8.jpg) ![Screenshot 2](https://res.cloudinary.com/olayemii/image/upload/v1612831194/assets/crypto-002_ewein8.jpg) ![Screenshot 3](https://res.cloudinary.com/olayemii/image/upload/v1612254708/assets/coffee-3_wuo8gf.jpg)
+![Screenshot 1](https://res.cloudinary.com/olayemii/image/upload/v1612831194/assets/crypto-001_uq1uc8.jpg) ![Screenshot 2](https://res.cloudinary.com/olayemii/image/upload/v1612831194/assets/crypto-002_ewein8.jpg) ![Screenshot 3](https://res.cloudinary.com/olayemii/image/upload/v1612831194/assets/crypto-003_oi58pa.jpg)
 
 ![Main Page](https://res.cloudinary.com/olayemii/image/upload/v1612831196/assets/crypto-main_loieck.jpg)
