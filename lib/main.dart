@@ -2,7 +2,7 @@ import 'package:crypto_dashboard/pages/coin_detail/coin_detail.dart';
 import 'package:crypto_dashboard/pages/home/homepage.dart';
 import 'package:crypto_dashboard/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/screenutil_init.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(375, 812),
-      allowFontScaling: false,
       builder: () {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
